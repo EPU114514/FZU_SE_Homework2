@@ -1,0 +1,43 @@
+﻿@Homework2_HostAddress = http://localhost:5012
+
+GET {{Homework2_HostAddress}}/api/contacts?page=1&pageSize=20
+Accept: application/json
+
+###
+
+POST {{Homework2_HostAddress}}/api/contacts
+Content-Type: application/json
+
+{
+  "name": "Alice Zhang",
+  "company": "Fuzhou University",
+  "notes": "Software engineering classmate",
+  "isFavorite": true,
+  "methods": [
+    { "type": "Phone", "label": "Mobile", "value": "13800000001", "isPrimary": true },
+    { "type": "Email", "label": "Work", "value": "alice@example.com", "isPrimary": true },
+    { "type": "WeChat", "label": "", "value": "alice_wx", "isPrimary": false }
+  ]
+}
+
+###
+
+GET {{Homework2_HostAddress}}/api/contacts?favorite=true
+Accept: application/json
+
+###
+
+GET {{Homework2_HostAddress}}/api/contacts/export
+Accept: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+
+###
+
+POST {{Homework2_HostAddress}}/api/contacts/import?skipDuplicates=true
+Content-Type: multipart/form-data; boundary=Homework2Boundary
+
+--Homework2Boundary
+Content-Disposition: form-data; name="file"; filename="contacts.xlsx"
+Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+
+< ./contacts.xlsx
+--Homework2Boundary--

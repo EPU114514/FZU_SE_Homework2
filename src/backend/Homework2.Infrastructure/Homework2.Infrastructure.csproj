@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net11.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <RootNamespace>Homework2.Infrastructure</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="ClosedXML" Version="0.105.1"/>
+        <PackageReference Include="MongoDB.Driver" Version="3.14.0"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Homework2.Application\Homework2.Application.csproj"/>
+        <ProjectReference Include="..\Homework2.Domain\Homework2.Domain.csproj"/>
+    </ItemGroup>
+
+</Project>
