@@ -1,0 +1,14 @@
+**/node_modules
+**/dist
+**/bin
+**/obj
+.tmp
+.idea
+.vscode
+.git
+publish
+**/.env.local
+**/*.local
+**/*.user
+**/*.log
+data
